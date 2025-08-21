@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nur Syakilah Binti Shafi’e — Portfolio</title>
+  <meta name="description" content="Portfolio of Nur Syakilah — projects, skills, experience, and contact." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/User_font_awesome.svg"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}*{margin:0}html,body{height:100%}
+    img{display:block;max-width:100%;height:auto}
+    body{font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;color:#e5e7eb;
+         background:#0b1220;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none}
+    .container{max-width:1100px;margin-inline:auto;padding:0 1.2rem}
+    header{position:sticky;top:0;background:rgba(11,18,32,.9);border-bottom:1px solid #1f2a44;z-index:40}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .logo{display:flex;align-items:center;gap:.7rem;font-weight:800;color:white}
+    .nav-links{display:flex;align-items:center;gap:1rem}
+    .nav-links a{color:#94a3b8;padding:.4rem .6rem;border-radius:.4rem}
+    .nav-links a:hover{background:rgba(148,163,184,.12);color:white}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:2rem;padding:4rem 0}
+    .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;color:white}
+    .lead{font-size:1.05rem;color:#94a3b8}
+    .pill{display:inline-block;padding:.35rem .7rem;border:1px solid #1f2a44;border-radius:999px;font-size:.85rem;color:#94a3b8;margin-bottom:.7rem}
+    .btn{display:inline-block;padding:.8rem 1rem;border-radius:.5rem;margin:.2rem;
+         border:1px solid #1f2a44;background:#0ea5e9;color:white}
+    .btn.ghost{background:transparent;color:#e5e7eb}
+    .section{padding:4rem 0}
+    h2{font-size:1.6rem;margin-bottom:1.2rem;color:white}
+    .about{display:grid;grid-template-columns:120px 1fr;gap:1.2rem;align-items:start;background:#0f172a;padding:1rem;border-radius:1rem}
+    .avatar img{width:120px;height:120px;border-radius:1rem;object-fit:cover;border:2px solid #1f2a44}
+    .skills span{display:inline-block;padding:.4rem .7rem;margin:.3rem;border:1px solid #1f2a44;border-radius:999px;font-size:.9rem;color:#94a3b8}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+    .card{background:#0f172a;padding:1rem;border-radius:1rem;border:1px solid #1f2a44}
+    .project-title{font-weight:700;color:white;margin:.5rem 0}
+    .muted{color:#94a3b8;font-size:.95rem}
+    .timeline{border-left:2px solid #1f2a44;padding-left:1rem}
+    .timeline-item{margin-bottom:1.5rem}
+    footer{padding:2rem 0;border-top:1px solid #1f2a44;color:#94a3b8;font-size:.95rem;text-align:center}
+  </style>
+</head>
+
+<!-- Modal gallery -->
+<style>
+  .modal{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,.9);
+    display:none;flex-direction:column;justify-content:center;align-items:center;z-index:1000;
+  }
+  .modal img,.modal video{max-width:90%;max-height:70vh;border-radius:.5rem}
+  .modal-controls{margin-top:1rem;display:flex;gap:1rem}
+  .modal button{padding:.6rem 1rem;border:none;border-radius:.4rem;background:#0ea5e9;color:white;cursor:pointer}
+  .close-btn{position:absolute;top:20px;right:20px;background:#f43f5e !important}
+  
+  .project-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+.project-card img {
+  transition: transform 0.4s ease;
+  border-radius: 0.7rem;
+}
+.project-card:hover img {
+  transform: scale(1.08);
+}
+.modal {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.9);
+  display: none; flex-direction: column; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal img { max-width: 90%; max-height: 60vh; border-radius: .5rem; }
+.modal-description { color:white; margin-top:1rem; max-width:80%; text-align:center; }
+.modal-controls { margin-top: 1rem; display:flex; gap:1rem; }
+.modal button { padding:.6rem 1rem; border:none; border-radius:.4rem; background:#0ea5e9; color:white; cursor:pointer; }
+.close-btn { position:absolute; top:20px; right:20px; background:#f43f5e !important; }
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.achievement-card {
+  background: #0f172a;
+  border: 1px solid #1f2a44;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.achievement-text {
+  padding: 1rem;
+  color: #94a3b8;
+}
+
+.achievement-text h4 {
+  color: white;
+  margin-bottom: .4rem;
+  font-size: 1.1rem;
+}
+
+.achievement-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 15px rgba(14,165,233,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr; /* stack hero content */
+    text-align: center;
+  }
+  .hero img {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.5rem; /* more space on small screens */
+  }
+  .card, .about, .skills {
+    padding: 1rem; /* inner spacing */
+  }
+}
+
+.container {
+  max-width:1100px;
+  margin-inline:auto;
+  padding:0 1.2rem;  /* <-- THIS gives left/right space */
+}
+
+  
+</style>
+
+<div class="modal" id="modal">
+  <button class="close-btn" onclick="closeModal()">✕</button>
+  <div id="modal-content">
+    <div id="modal-media-container" style="max-width:90%;max-height:60vh;border-radius:.5rem;"></div>
+  </div>
+</div>
+
+
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+	<a class="logo" href="#home">
+  <img src="passport.jpeg" alt="NS Logo" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
+  Nur Syakilah
+</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <!-- Hero -->
+  <section class="hero container">
+    <div>
+		<br>
+      <h1>Hye, I am <span style="color:#0ea5e9"> <br>Nur Syakilah binti Shafi'e</span>
+	  <br>A Computer Science Student Specializing in Multimedia</h1>
+      <br><p class="lead">I’m passionate about creating interactive multimedia designs, 3D models, simple games, websites, and digital artwork. By combining creativity and coding skills, I build digital projects that are both engaging and practical.</p>
+      <br><div>
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+      </div>
+    </div>
+	<br><br>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section container">
+    <br><br>
+	<h2>About</h2>
+    <div class="about">
+      <div class="avatar">
+        <img src="passport.jpeg" alt="Profile">
+      </div>
+      <div>
+  <p class="lead">
+    I’m currently pursuing a <strong>Bachelor of Computer Science (Hons.) in Multimedia Computing</strong> at UiTM Jasin, Melaka. 
+    My journey has been shaped by hands-on projects in <strong>game development, 3D modeling, web systems and digital artwork</strong>. 
+    I enjoy turning ideas into interactive and practical digital solutions using tools like Unity, Construct 3, Blender, and modern web frameworks.
+  </p>
+</div>
+
+    </div>
+	<br><br>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section container">
+    <h2>Skills</h2>
+    <div class="card skills">
+      <span>C++</span><span>Java</span><span>Python</span><span>HTML</span><span>CSS</span>
+      <span>JavaScript</span><span>SQL</span><span>PHP</span>
+      <span>Unity</span><span>Construct 3</span><span>Android Studio</span>
+      <span>Photoshop</span><span>Illustrator</span><span>Animate</span>
+      <span>Canva</span><span>Blender</span><span>3ds Max</span>
+    </div>
+    <div class="card" style="margin-top:1rem; padding:1rem;">
+  <strong>Languages</strong>
+  <ul style="margin:0.5rem 0 0 1rem; padding:0;">
+    <li>Bahasa Melayu <span style="color:gray;">(Native)</span></li>
+    <li>English <span style="color:gray;">(Intermediate)</span></li>
+  </ul>
+</div>
+
+	<br><br>
+  </section>
+
+<!-- Projects -->
+<section id="projects" class="section container">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <!-- Mandarin Master -->
+    <div class="card project-card" id="project-mandarin">
+      <img src="Mandarin Master  cover.png" alt="Mandarin Master preview">
+      <div class="project-title">Mandarin Master: Interactive 3D Game For Mandarin Language Learning</div>
+      <p class="muted">
+        A Unity-based 3D educational game designed to help UiTM students learn Mandarin through interactive gameplay. The game features vocabulary practice, pronunciation with speech recognition, and character writing via tracing mini-games. Built using the Game Development Life Cycle (GDLC) and the EGameFlow model, it provides an immersive learning experience with levels, challenges, and real-time feedback. The project enhanced my skills in Unity development, game-based learning design, and integrating AI speech technologies.
+      </p>
+    </div>
+
+    <!-- Symphony Shop Simulation -->
+    <div class="card project-card" id="project-vr">
+      <img src="Symphony Shop cover.png" alt="VR simulation preview">
+      <div class="project-title">Symphony 3D Shop Simulation</div>
+      <p class="muted">
+        Designed and developed an interactive personality test game built using Unity, aimed at helping teenagers discover their unique personality types through engaging gameplay and gamified self-assessment.
+      </p>
+    </div>
+
+    <!-- Water Guardian -->
+    <div class="card project-card" id="project-water">
+      <img src="Water Guardian cover.png" alt="Water Guardian game preview">
+      <div class="project-title">Water Guardian: Heroes of Tomorrow</div>
+      <p class="muted">
+        Develop an interactive 2D educational game that teaches players about the importance of water security.
+      </p>
+    </div>
+
+    <!-- 3D Dream House Modeling -->
+    <div class="card project-card" id="project-house">
+      <img src="Lego cover.png" alt="3D Dream House preview">
+      <div class="project-title">De'Lagos Website</div>
+      <p class="muted">
+        Developed an interactive e-commerce website for LEGO enthusiasts using HTML, CSS, and JavaScript. Features include user registration/login, product browsing, customization options, cart management, and multiple payment methods. Conducted user surveys and applied heuristic evaluation to ensure a modern, user-friendly shopping experience.
+      </p>
+    </div>
+
+    <!-- Hotel Registration Management System -->
+    <div class="card project-card" id="project-hotel">
+      <img src="Hotel cover.png" alt="Hotel system preview">
+      <div class="project-title">King Land: Hotel Registration Management System</div>
+      <p class="muted">
+        King Land Hotel Registration Management System, A web-based system that allows guests to register, log in, book rooms, and manage reservations, while admins can oversee bookings, update guest profiles, and generate reports. Built using MVC architecture with full CRUD operations, the project improved my skills in database design, authentication, and user-friendly interface development.
+      </p>
+    </div>
+
+  </div>
+  <br><br>
+</section>
+
+
+  <!-- Experience -->
+  <section id="experience" class="section container">
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="project-title">Retail Staff - 7-Eleven  <span style="color:gray;"> (Mar 2025)</span></div>
+        <p class="muted"> Operated the cash register, restocked items, and organized merchandise. Provided customer
+ assistance and ensured the store remained clean and welcoming.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="project-title">Cashier - 99 Speedmart  <span style="color:gray;"> (Jul – Sept 2024)</span></div>
+        <p class="muted">Processed various payment methods including cash and e-wallets. Assisted with inventory
+ by tracking stock levels and supported customers with a positive and friendly attitude.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="project-title">Cashier - MR. D.I.Y  <span style="color:gray;"> (Jun – Sept 2022)</span></div>
+        <p class="muted">Handled daily cash transactions using a POS system while assisting customers in finding
+ products. Maintained clean shelves and ensured the cashier area was neat and organized.</p>
+      </div>
+    </div>
+	<br><br>
+  </section>
+
+<!-- Achievements -->
+<section id="achievements" class="section container">
+  <h2>Achievements</h2>
+  <div class="achievements-grid">
+
+    <!-- Example achievement card -->
+    <div class="achievement-card">
+      <img src="1.png" alt="Top Coders Malaysia 2024">
+      <div class="achievement-text">
+        <h4>Top Coders Malaysia 2024</h4>
+        <p>Achieved 3rd place. Showcased teamwork, coding, and problem-solving skills through individual and group challenges.</p>
+      </div>
+    </div>
+
+    <div class="achievement-card">
+      <img src="2.png" alt="Hackathon Competition">
+      <div class="achievement-text">
+        <h4>Hackathon Competition </h4>
+        <p>Developed a tech prototype in a fast-paced, time-limited hackathon. Contributed to ideas, coding, and debugging while improving teamwork and problem-solving under pressure.</p>
+      </div>
+    </div>
+
+    <div class="achievement-card">
+      <img src="3.png" alt="Leadership">
+      <div class="achievement-text">
+        <h4>Commissioned As Leftenan Muda Kesatria </h4>
+        <p>Officially awarded rank during Majlis Pentauliahan Komander Kesatria Siri ke-20, recognizing leadership and service commitment.</p>
+      </div>
+    </div>
+
+    <!-- Add more cards as needed -->
+
+  </div>
+  <br><br>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section container">
+  <h2>Contact</h2>
+  <div class="card">
+    <p class="lead">
+      Email: 
+      <a href="mailto:nursyakilahhhhh@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Nur%20Syakilah," target="_blank">
+        nursyakilahhhhh@gmail.com
+      </a>
+    </p>
+    <p class="lead">
+      Number: 
+      <a href="https://wa.me/60194106579?text=Hi%20Nur%20Syakilah%2C%20I%20found%20your%20portfolio%20online." target="_blank">
+        +60 19-410 6579
+      </a>
+  </div>
+  <br><br>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Nur Syakilah Binti Shafi’e.
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- image/video slides for each project ---
+const projectData = {
+  "project-mandarin": {
+    slides: [
+      "https://youtu.be/DU27Ul0Qcw0",
+      "https://images.unsplash.com/photo-1618354691390-c0315f1bd8a1?w=1200&fit=crop&auto=format"
+    ],
+    description: `
+      <h3>MANDARIN MASTER INTERACTIVE 3D GAME FOR MANDARIN LANGUAGE LEARNING</h3>
+    `
+  },
+  "project-vr": {
+    slides: [
+      "https://youtu.be/lfM4B3UMmTo",
+      "https://images.unsplash.com/photo-1591797442444-039f23ddcc14?w=1200&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1581092334669-99e4b8cf7d2f?w=1200&fit=crop&auto=format"
+    ],
+    description: `
+      <h3>\SYMPHONY SHOP SIMULATION</h3>
+    `
+  },
+  "project-water": {
+    slides: [
+      "https://youtu.be/NPJ45jfp9hQ",
+      "https://images.unsplash.com/photo-1549924231-f129b911e442?w=1200&fit=crop&auto=format"
+    ],
+    description: `
+      <h3>WATER GUARDIAN: HEROES OF TOMORROW</h3>
+    `
+  },
+"project-house": {
+  slides: [
+    "Lego report.pdf",  // <-- Your PDF file here
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&fit=crop&auto=format"
+  ],
+  description: `
+    <h3>BUILD YOUR DREAM: BRICK BY BRICK</h3>
+  `
+},
+"project-hotel": {
+  slides: [
+    "Hotel report.pdf",  // <-- Your PDF file here
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&fit=crop&auto=format"
+  ],
+  description: `
+    <h3>KING LAND: MANAGEMENT SYSTEM</h3>
+  `
+}
+};
+
+
+let currentSlides = [];
+let currentIndex = 0;
+
+Object.keys(projectData).forEach(id => {
+  const card = document.getElementById(id);
+  if (card) {
+    card.style.cursor = "pointer";
+    card.addEventListener('click', () => {
+      const data = projectData[id];
+      currentSlides = data.slides;
+      currentIndex = 0;
+      showSlide(currentIndex);
+      openModal();
+    });
+  }
+});
+
+
+// --- modal open/close ---
+function openModal() {
+  document.getElementById('modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('modal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function showSlide(index) {
+  const container = document.getElementById('modal-media-container');
+  const url = currentSlides[index];
+  container.innerHTML = ""; // Clear previous slide
+
+if (url.endsWith(".pdf")) {
+  container.innerHTML = `
+    <iframe src="${url}" 
+            style="width:100vw;height:100vh;border:none;margin:0;padding:0;" 
+            frameborder="0"></iframe>
+  `;
+}
+
+  else if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    // YouTube video
+    let embedUrl = url;
+    if (url.includes("youtu.be")) {
+      const videoId = url.split("youtu.be/")[1];
+      embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    }
+    container.innerHTML = `
+      <iframe width="800" height="450"
+              src="${embedUrl}"
+              frameborder="0"
+              allowfullscreen
+              style="border-radius:.5rem;max-width:100%;max-height:60vh;">
+      </iframe>`;
+  } 
+  else {
+    // Image
+    container.innerHTML = `
+      <img src="${url}" alt="Project media"
+           style="max-width:100%;max-height:60vh;border-radius:.5rem;">
+    `;
+  }
+}
+
+
+
+// --- next/prev ---
+function nextSlide(){
+  currentIndex = (currentIndex + 1) % currentSlides.length;
+  showSlide(currentIndex);
+}
+function prevSlide(){
+  currentIndex = (currentIndex - 1 + currentSlides.length) % currentSlides.length;
+  showSlide(currentIndex);
+}
+</script>
+
+
+
+</body>
+</html>
