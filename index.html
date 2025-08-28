@@ -164,6 +164,42 @@
   padding:0 1.2rem;  /* <-- THIS gives left/right space */
 }
 
+/* --- Responsive Navigation --- */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0f172a;
+    position: absolute;
+    top: 60px; /* bawah header */
+    right: 20px;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #1f2a44;
+  }
+
+  .nav-links a {
+    color: #e5e7eb;
+    padding: .7rem;
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
   
 </style>
 
@@ -179,21 +215,24 @@
 <body>
 <header>
   <div class="container">
-    <nav>
-	<a class="logo" href="#home">
-  <img src="passport.jpeg" alt="NS Logo" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
-  Nur Syakilah
-</a>
+<nav>
+  <a class="logo" href="#home">
+    <img src="passport.jpeg" alt="NS Logo" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
+    Nur Syakilah
+  </a>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+  <!-- Tambah sini -->
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
   </div>
 </header>
 
@@ -303,34 +342,47 @@
         King Land Hotel Registration Management System, A web-based system that allows guests to register, log in, book rooms, and manage reservations, while admins can oversee bookings, update guest profiles, and generate reports. Built using MVC architecture with full CRUD operations, the project improved my skills in database design, authentication, and user-friendly interface development.
       </p>
     </div>
+	
+	    <!-- Wedding Invitation -->
+    <div class="card project-card" id="project-Wedding">
+      <img src="Wedding cover.png" alt="Wedding preview">
+      <div class="project-title">Wedding Invitation Card</div>
+      <p class="muted">
+        A creative and elegant wedding invitation design that blends modern aesthetics with cultural elements. The design focuses on readability, soft color palettes, and decorative typography to capture the essence of a memorable celebration. This project highlights my skills in layout design, typography, and attention to detail.
+      </p>
+    </div>
+	
+	    <!-- Graphic Design -->
+    <div class="card project-card" id="project-graphic">
+      <img src="Posting cover.png" alt="Posting preview">
+      <div class="project-title">Graphic Design</div>
+      <p class="muted">
+        Engaging and visually appealing Instagram post designs crafted to increase interaction. This project showcases my ability to design digital content tailored for social media platforms, using balanced compositions, attractive color schemes, and trend-conscious layouts to connect with audiences effectively.
+		</p>
+	</div>
+	
+		<!-- Game Design -->
+    <div class="card project-card" id="project-game">
+      <img src="Game Design cover.png" alt="Game design preview">
+      <div class="project-title">Game Design</div>
+      <p class="muted">
+        Developed an interactive 3D game concept with a focus on engaging gameplay mechanics and user experience. The project demonstrates skills in game design, storytelling, level development, and UI/UX design.
+		</p>
+    </div>
+	
+			<!-- Mobile Game Design -->
+    <div class="card project-card" id="project-mobile game">
+      <img src="Mobile Game Design cover.png" alt="Mobile Game design preview">
+      <div class="project-title">Mobile Game Design</div>
+      <p class="muted">
+        Designed a mobile application that introduces Malay national heroes through interactive profiles, timelines, and visual storytelling. The app aims to educate and inspire younger generations while preserving cultural heritage.
+		</p>
+    </div>
 
   </div>
   <br><br>
 </section>
 
-
-  <!-- Experience -->
-  <section id="experience" class="section container">
-    <h2>Work Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="project-title">Retail Staff - 7-Eleven  <span style="color:gray;"> (Mar 2025)</span></div>
-        <p class="muted"> Operated the cash register, restocked items, and organized merchandise. Provided customer
- assistance and ensured the store remained clean and welcoming.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="project-title">Cashier - 99 Speedmart  <span style="color:gray;"> (Jul – Sept 2024)</span></div>
-        <p class="muted">Processed various payment methods including cash and e-wallets. Assisted with inventory
- by tracking stock levels and supported customers with a positive and friendly attitude.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="project-title">Cashier - MR. D.I.Y  <span style="color:gray;"> (Jun – Sept 2022)</span></div>
-        <p class="muted">Handled daily cash transactions using a POS system while assisting customers in finding
- products. Maintained clean shelves and ensured the cashier area was neat and organized.</p>
-      </div>
-    </div>
-	<br><br>
-  </section>
 
 <!-- Achievements -->
 <section id="achievements" class="section container">
@@ -395,6 +447,13 @@
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 
 <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // --- image/video slides for each project ---
@@ -411,17 +470,14 @@ const projectData = {
   "project-vr": {
     slides: [
       "https://youtu.be/lfM4B3UMmTo",
-      "https://images.unsplash.com/photo-1591797442444-039f23ddcc14?w=1200&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1581092334669-99e4b8cf7d2f?w=1200&fit=crop&auto=format"
-    ],
+	  ],
     description: `
       <h3>\SYMPHONY SHOP SIMULATION</h3>
     `
   },
   "project-water": {
     slides: [
-      "https://youtu.be/NPJ45jfp9hQ",
-      "https://images.unsplash.com/photo-1549924231-f129b911e442?w=1200&fit=crop&auto=format"
+      "https://youtu.be/NPJ45jfp9hQ"
     ],
     description: `
       <h3>WATER GUARDIAN: HEROES OF TOMORROW</h3>
@@ -430,7 +486,6 @@ const projectData = {
 "project-house": {
   slides: [
     "Lego report.pdf",  // <-- Your PDF file here
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&fit=crop&auto=format"
   ],
   description: `
     <h3>BUILD YOUR DREAM: BRICK BY BRICK</h3>
@@ -439,10 +494,41 @@ const projectData = {
 "project-hotel": {
   slides: [
     "Hotel report.pdf",  // <-- Your PDF file here
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&fit=crop&auto=format"
-  ],
+    ],
   description: `
     <h3>KING LAND: MANAGEMENT SYSTEM</h3>
+  `
+},
+"project-Wedding": {
+  slides: [
+    "https://youtu.be/xriKaV1jEk0",  // <-- Your PDF file here
+    ],
+  description: `
+    <h3>WEDDING CARD INVITATION</h3>
+  `
+},
+"project-graphic": {
+  slides: [
+    "Graphic report.pdf",  // <-- Your PDF file here
+    ],
+  description: `
+    <h3>GRAPHIC DESIGN</h3>
+  `
+},
+"project-game": {
+  slides: [
+    "Game Design Report.pdf",  // <-- Your PDF file here
+   ],
+  description: `
+    <h3>GAME DESIGN</h3>
+  `
+},
+"project-mobile game": {
+  slides: [
+    "Mobile Game Design Report.pdf",  // <-- Your PDF file here
+   ],
+  description: `
+    <h3>MOBILE GAME DESIGN</h3>
   `
 }
 };
