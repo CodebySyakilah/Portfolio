@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nur Syakilah Binti Shafi’e — Portfolio</title>
-  <meta name="description" content="Portfolio of Nur Syakilah — projects, skills, experience, and contact." />
+  <meta name="description" content="Portfolio of Nur Syakilah — Computer Science Graduate specializing in Multimedia Computing, Web Development, and 3D Design." />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/User_font_awesome.svg"/>
   <style>
@@ -200,8 +200,46 @@
   }
 }
 
+/* Style untuk Timeline yang lebih menarik */
+.timeline {
+  border-left: 2px solid #1f2a44; /* Garisan utama */
+  padding-left: 2rem;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+/* Bulatan pada garisan timeline */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 7px); /* Letak tepat di atas garisan */
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #0ea5e9; /* Warna biru cerah */
+  border: 3px solid #0b1220; /* Warna background supaya nampak 'floating' */
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5); /* Efek glow */
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
   
 </style>
+
+
 
 <div class="modal" id="modal">
   <button class="close-btn" onclick="closeModal()">✕</button>
@@ -243,7 +281,7 @@
 		<br>
       <h1>Hye, I am <span style="color:#0ea5e9"> <br>Nur Syakilah binti Shafi'e</span>
 	  <br>A Computer Science Student Specializing in Multimedia</h1>
-      <br><p class="lead">I’m passionate about creating interactive multimedia designs, 3D models, simple games, websites, and digital artwork. By combining creativity and coding skills, I build digital projects that are both engaging and practical.</p>
+      <br><p class="lead">I am a Computer Science graduate (CGPA 3.22) from UiTM Jasin, specializing in Multimedia Computing. I have a proven track record in developing web-based systems, 3D modeling, and interactive media through my internship and academic projects.</p>
       <br><div>
         <a class="btn" href="#projects">View Projects</a>
         <a class="btn ghost" href="#contact">Contact Me</a>
@@ -262,10 +300,10 @@
       </div>
       <div>
   <p class="lead">
-    I’m currently pursuing a <strong>Bachelor of Computer Science (Hons.) in Multimedia Computing</strong> at UiTM Jasin, Melaka. 
-    My journey has been shaped by hands-on projects in <strong>game development, 3D modeling, web systems and digital artwork</strong>. 
-    I enjoy turning ideas into interactive and practical digital solutions using tools like Unity, Construct 3, Blender, and modern web frameworks.
-  </p>
+  I recently graduated with a <strong>Bachelor of Computer Science (Hons.) in Multimedia Computing</strong> from UiTM Jasin. 
+  During my internship at <strong>Jabatan Agama Islam Wilayah Persekutuan (JAWI)</strong>, I gained professional experience in IT support and digital data management. 
+  I am now seeking a full-time role where I can apply my skills in Unity, web development (PHP/MySQL), and 3D design to build innovative digital solutions.
+</p>
 </div>
 
     </div>
@@ -273,47 +311,144 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="section container">
-    <h2>Skills</h2>
-    <div class="card skills">
-      <span>C++</span><span>Java</span><span>Python</span><span>HTML</span><span>CSS</span>
-      <span>JavaScript</span><span>SQL</span><span>PHP</span>
-      <span>Unity</span><span>Construct 3</span><span>Android Studio</span>
-      <span>Photoshop</span><span>Illustrator</span><span>Animate</span>
-      <span>Canva</span><span>Blender</span><span>3ds Max</span>
+<section id="skills" class="section container">
+  <h2>Skills & Languages</h2>
+  
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem;">
+    
+    <div class="card">
+      <strong style="color: #0ea5e9; display: block; margin-bottom: 1rem;">Programming & Web</strong>
+      <div class="skills">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        <span>PHP</span><span>SQL</span>
+        <span>Java</span><span>Python</span>
+      </div>
     </div>
-    <div class="card" style="margin-top:1rem; padding:1rem;">
-  <strong>Languages</strong>
-  <ul style="margin:0.5rem 0 0 1rem; padding:0;">
-    <li>Bahasa Melayu <span style="color:gray;">(Native)</span></li>
-    <li>English <span style="color:gray;">(Intermediate)</span></li>
-  </ul>
-</div>
 
-	<br><br>
-  </section>
+    <div class="card">
+      <strong style="color: #0ea5e9; display: block; margin-bottom: 1rem;">Tools & Software</strong>
+      <div class="skills">
+        <span>Unity</span>
+        <span>Adobe Photoshop</span><span>Illustrator</span>
+        <span>Blender</span><span>3ds Max</span>
+        <span>Construct 3</span><span>Android Studio</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <strong style="color: #0ea5e9; display: block; margin-bottom: 1rem;">Specialized Skills</strong>
+      <div class="skills">
+        <span>UI/UX Design</span>
+        <span>3D Modeling</span>
+        <span>Game Development</span>
+        <span>Digital Design</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <strong style="color: #0ea5e9; display: block; margin-bottom: 1rem;">Languages</strong>
+      <ul style="margin: 0; padding-left: 1.2rem; color: #94a3b8;">
+        <li style="margin-bottom: 0.5rem;">Bahasa Melayu <span style="color: #555;">(Native)</span></li>
+        <li>English <span style="color: #555;">(Intermediate)</span></li>
+      </ul>
+    </div>
+
+  </div>
+  <br><br>
+</section>
+
+  <!-- Working Experience -->
+<section id="experience" class="section container">
+  <h2>Working Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+        <h3 style="color: white;">Jabatan Agama Islam Wilayah Persekutuan (JAWI)</h3>
+        <span class="muted">Sept 2025 - Dec 2025</span>
+      </div>
+      <p style="color: #0ea5e9; font-weight: 600;">Technical Intern (IT Department)</p>
+      <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li>Assisted in developing a web-based Case File Registration System.</li>
+        <li>Supported the IT department in managing and organizing digital data efficiently.</li>
+        <li>Participated in basic system development and various administrative tasks.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+        <h3 style="color: white;">7-Eleven Centrio Avenue</h3>
+        <span class="muted">March 2025</span>
+      </div>
+      <p style="color: #0ea5e9; font-weight: 600;">Store Crew</p>
+      <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li>Operated cash register and handled daily customer transactions.</li>
+        <li>Restocked items and organized merchandise displays to maintain store standards.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+        <h3 style="color: white;">99 Speedmart Sdn Bhd</h3>
+        <span class="muted">July 2024 - Sept 2024</span>
+      </div>
+      <p style="color: #0ea5e9; font-weight: 600;">Cashier</p>
+      <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li>Processed transactions using multiple payment methods (cash, card, e-wallets).</li>
+        <li>Assisted in inventory management and delivered efficient customer service.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+        <h3 style="color: white;">MR.DIY</h3>
+        <span class="muted">June 2022 - Sept 2022</span>
+      </div>
+      <p style="color: #0ea5e9; font-weight: 600;">Cashier</p>
+      <ul class="muted" style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li>Handled daily cash transactions using POS system.</li>
+        <li>Assisted customers in locating products and maintained area cleanliness.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
 <!-- Projects -->
 <section id="projects" class="section container">
   <h2>Projects</h2>
   <div class="projects">
 
+	    <!-- Intern -->
+<div class="card project-card" id="project-intern">
+  <img src="jawi_system_cover.jpeg" alt="Case File Registration System preview">
+  <div class="project-title">System Enhancement Case File Registration <br>(Internship)</div>
+  <p class="muted">
+    During my internship, I worked on enhancing an existing case registration system to make it more efficient. 
+    I redesigned the user interface to be more user-friendly and added new functions to simplify daily tasks for the staff. 
+    This project focused on improving the overall user experience and making digital data management faster and easier.
+  </p>
+</div>
+
     <!-- Mandarin Master -->
     <div class="card project-card" id="project-mandarin">
       <img src="Mandarin Master  cover.png" alt="Mandarin Master preview">
-      <div class="project-title">Mandarin Master: Interactive 3D Game For Mandarin Language Learning</div>
+      <div class="project-title">Mandarin Master: Interactive 3D Game For Mandarin Language Learning <br>(Final Year Project)</div>
       <p class="muted">
         A Unity-based 3D educational game designed to help UiTM students learn Mandarin through interactive gameplay. The game features vocabulary practice, pronunciation with speech recognition, and character writing via tracing mini-games. Built using the Game Development Life Cycle (GDLC) and the EGameFlow model, it provides an immersive learning experience with levels, challenges, and real-time feedback. The project enhanced my skills in Unity development, game-based learning design, and integrating AI speech technologies.
       </p>
     </div>
+
 
     <!-- Symphony Shop Simulation -->
     <div class="card project-card" id="project-vr">
       <img src="Symphony Shop cover.png" alt="VR simulation preview">
       <div class="project-title">Symphony 3D Shop Simulation</div>
       <p class="muted">
-        Designed and developed an interactive personality test game built using Unity, aimed at helping teenagers discover their unique personality types through engaging gameplay and gamified self-assessment.
-      </p>
+       In this group project, we developed an interactive 3D simulation using <strong>Unity</strong> to conduct personality tests for teenagers. 
+    I focused on <strong>3D environment design</strong> and implementing core functions learned during our Multimedia coursework. 
+    This project demonstrates our ability to combine creative 3D modeling with gamified assessment to create an engaging user experience.
+	   </p>
     </div>
 
     <!-- Water Guardian -->
@@ -321,27 +456,33 @@
       <img src="Water Guardian cover.png" alt="Water Guardian game preview">
       <div class="project-title">Water Guardian: Heroes of Tomorrow</div>
       <p class="muted">
-        Develop an interactive 2D educational game that teaches players about the importance of water security.
-      </p>
+      This is a group project where we developed an interactive 2D game using <strong>Construct 3</strong>. 
+    We focused on <strong>game-based learning</strong> to teach players about the importance of water security in a creative and engaging way. 
+    The project showcases our ability to design fun gameplay mechanics that also deliver meaningful educational messages to the audience.
+	  </p>
     </div>
 
-    <!-- 3D Dream House Modeling -->
-    <div class="card project-card" id="project-house">
-      <img src="Lego cover.png" alt="3D Dream House preview">
-      <div class="project-title">De'Lagos Website</div>
-      <p class="muted">
-        Developed an interactive e-commerce website for LEGO enthusiasts using HTML, CSS, and JavaScript. Features include user registration/login, product browsing, customization options, cart management, and multiple payment methods. Conducted user surveys and applied heuristic evaluation to ensure a modern, user-friendly shopping experience.
-      </p>
-    </div>
+    <!-- Lego -->
+<div class="card project-card" id="project-house">
+  <img src="Lego cover.png" alt="De'Lagos E-Commerce preview">
+  <div class="project-title">De'Lagos: Interactive E-Commerce Platform</div>
+  <p class="muted">
+    Developed a professional e-commerce prototype for LEGO enthusiasts using <strong>HTML, CSS, and JavaScript</strong>. 
+    The platform includes advanced features such as a <strong>custom LEGO creator</strong>, secure cart management with voucher applications, and a real-time order tracking and cancellation system. 
+    A key part of this project was applying all <strong>10 Usability Heuristics</strong> to ensure a seamless experience, including real-time error prevention and a minimalist design to help users browse and shop efficiently.
+  </p>
+</div>
 
     <!-- Hotel Registration Management System -->
-    <div class="card project-card" id="project-hotel">
-      <img src="Hotel cover.png" alt="Hotel system preview">
-      <div class="project-title">King Land: Hotel Registration Management System</div>
-      <p class="muted">
-        King Land Hotel Registration Management System, A web-based system that allows guests to register, log in, book rooms, and manage reservations, while admins can oversee bookings, update guest profiles, and generate reports. Built using MVC architecture with full CRUD operations, the project improved my skills in database design, authentication, and user-friendly interface development.
-      </p>
-    </div>
+<div class="card project-card" id="project-hotel">
+  <img src="Hotel cover.png" alt="Hotel system preview">
+  <div class="project-title">King Land: Hotel Registration Management System</div>
+  <p class="muted">
+    Developed a comprehensive web-based hotel system using <strong>MVC architecture</strong>. 
+    The platform allows guests to register, book various room types like Deluxe or Executive Suites, and manage their reservations securely with an encrypted process. 
+    It also features a powerful <strong>Admin Dashboard</strong> to monitor total bookings, manage guest registrations, and update personal details, demonstrating my ability to build secure, data-driven applications.
+  </p>
+</div>
 	
 	    <!-- Wedding Invitation -->
     <div class="card project-card" id="project-Wedding">
@@ -394,7 +535,7 @@
       <img src="1.png" alt="Top Coders Malaysia 2024">
       <div class="achievement-text">
         <h4>Top Coders Malaysia 2024</h4>
-        <p>Achieved 3rd place. Showcased teamwork, coding, and problem-solving skills through individual and group challenges.</p>
+        <p>Achieved 3rd place in a national-level competition. Demonstrated advanced problem-solving, coding efficiency, and the ability to collaborate effectively in group challenges under pressure.</p>
       </div>
     </div>
 
@@ -402,7 +543,7 @@
       <img src="2.png" alt="Hackathon Competition">
       <div class="achievement-text">
         <h4>Hackathon Competition </h4>
-        <p>Developed a tech prototype in a fast-paced, time-limited hackathon. Contributed to ideas, coding, and debugging while improving teamwork and problem-solving under pressure.</p>
+        <p>Developed a functional tech prototype in a fast-paced, time-limited environment. Contributed to the entire development cycle, including ideation, coding, and debugging, while demonstrating strong problem-solving skills and the ability to perform under pressure.</p>
       </div>
     </div>
 
@@ -410,7 +551,7 @@
       <img src="3.png" alt="Leadership">
       <div class="achievement-text">
         <h4>Commissioned As Leftenan Muda Kesatria </h4>
-        <p>Officially awarded rank during Majlis Pentauliahan Komander Kesatria Siri ke-20, recognizing leadership and service commitment.</p>
+        <p>Officially awarded the rank during Majlis Pentauliahan Komander Kesatria Siri ke-20 in February 2025. This commission recognizes outstanding leadership, service commitment, and the successful completion of intensive commander training.</p>
       </div>
     </div>
 
@@ -483,6 +624,19 @@ const projectData = {
       <h3>WATER GUARDIAN: HEROES OF TOMORROW</h3>
     `
   },
+  
+  
+  
+  "project-intern": {
+    slides: [
+      "https://youtu.be/pv8F_Zw3MV4"
+    ],
+    description: `
+      <h3>WATER GUARDIAN: HEROES OF TOMORROW</h3>
+    `
+  },
+  
+  
 "project-house": {
   slides: [
     "Lego report.pdf",  // <-- Your PDF file here
